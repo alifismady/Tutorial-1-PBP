@@ -1,28 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Name: </h5>
-<b>{{name}}</b>
-
-<table>
-    <tr>
-    <th>Item Name</th>
-    <th>Item Price</th>
-    <th>Description</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    
-    {% comment %} Add data below {% endcomment %}
-    {% for item in list_item %}
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <b class="navbar-brand" style = "color:#efeff3; margin-left: 10px; margin-right: 1100px">Muhammad Alif Ismady</b>
+        <button type="button" class="btn btn-light"><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+    </div>
+</nav>
+\
+<table class="table table-hover table-dark">
+    <caption>List of Items</caption>
+    <thead>
         <tr>
-            <th>{{item.item_name}}</th>
-            <th>{{item.item_price}}</th>
-            <th>{{item.description}}</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Item Price</th>
+        <th scope="col">Description</th>
         </tr>
-    {% endfor %}
-
+    </thead>
+    <tbody>
+        {% comment %} Add the data below this line {% endcomment %}
+        
+        {% comment %} Add data below {% endcomment %}
+        {% for item in list_item %}
+            <tr class="table-light">
+                <th>{{item.item_name}}</th>
+                <th>{{item.item_price}}</th>
+                <th>{{item.description}}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
 <h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+
 
 {% endblock content %}
