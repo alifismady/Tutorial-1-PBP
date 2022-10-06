@@ -3,8 +3,9 @@
 {% block content %}
 <nav class="navbar bg-dark">
     <div class="container-fluid">
-        <b class="navbar-brand" style = "color:#efeff3; margin-left: 10px; margin-right: 1100px">Muhammad Alif Ismady</b>
-        <button type="button" class="btn btn-light"><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+        <b class="navbar-brand" style = "color:#efeff3; margin-left: 10px; margin-right: 1100px; text-align: center;">Selamat Datang, </b>
+        <b class="navbar-brand" style = "color:#efeff3; margin-left: 10px; margin-right: 1100px; text-align: center;">{{user}} </b>
+        <button type="button" class="btn btn-light" style="color: #efeff3;"><a href="{% url 'wishlist:logout' %}">Logout</a></button>
     </div>
 </nav>
 \
